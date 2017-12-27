@@ -1,0 +1,40 @@
+body{
+    margin: 0px;
+}
+
+#headerDiv{
+    padding-left: 20px;
+    height: 78px; 
+    background-image: url(images/header.jpg); 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-size: cover;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#navBar{
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: gray;
+}
+
+#navBar a{    
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+#postSection{
+    width: 75%; 
+    float: left;
+}
+
+#sideBar{
+    box-sizing: border-box;
+    border-left: dashed green;
+    float: right;
+    width: 25%;  
+}
