@@ -4,7 +4,6 @@
     Author     : rat
 --%>
 <%@taglib prefix="j" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,14 +15,19 @@
     <body>        
         <jsp:include page="Header.jsp"/>
         <jsp:useBean id="newsBean" scope="request" class="com.bean.NewsBean"/>
-        <j:set var="news" value="${newsBean.getNewsById(param.id)}"/>
+        <j:set var="matchedNews" value="${newsBean.getSearchedNews(param.keyword)}"/>
         <section class="section">
-            <p class="Title">${news.title}</p>
-            <j:if test="${news.imagePath != null}">                
-            <img alt="${news.title}" src="${news.imagePath}">
+            <j:if test="${matchedNews.size()>0}">
+                <j:forEach var="news" items="${matchedNews}">
+                    <div>                        
+                        <p><a class="newsTitle" href="Post.jsp?id=${news.id}">${news.title}</a></p>
+                        <div>${news.previewContent}</div>
+                    </div>
+                </j:forEach>
             </j:if>
-            <div class="newsContent">${news.content}</div>
-            <div class="newsFooter"><img src="images/comment.gif"> <img src="images/timeicon.gif"> By ${news.writer} | <fmt:formatDate type="both" value="${news.publishedDate}"/></div>
+            <j:if test="${matchedNews.size()<=0}">
+                <p>No article found!</p>
+            </j:if>
         </section>
         <jsp:include page="SideBar.jsp"/>
     </body>

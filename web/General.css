@@ -1,6 +1,16 @@
+/*General*/
+
 body{
+    font-family: Arial;
     margin: 0px;
 }
+
+.Title{
+    color: green;
+    font-weight: bold;
+}
+
+/*Header*/
 
 #headerDiv{
     padding-left: 20px;
@@ -27,14 +37,60 @@ body{
     color: white;
 }
 
-#postSection{
+.section{
     width: 75%; 
     float: left;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
+/*Side Bar*/
+
 #sideBar{
+    padding-left: 10px;
+    padding-right: 10px;
     box-sizing: border-box;
     border-left: dashed green;
+    border-left-width: 1.5px;
     float: right;
     width: 25%;  
+}
+
+.sideBarItemName{
+    color: green;
+    font-weight: bold;
+}
+
+#searchBox{
+    width: 80%;
+    border: dashed green;
+    border-width: 1.5px;
+    box-sizing: border-box;
+}
+
+#searchButton{
+    font-weight: bold;
+    text-align: center;
+    background: none;
+    width: 10%;
+    border: none;
+}
+
+.newsTitle{
+    text-decoration: underline;
+    color: green;
+}
+
+.newsContent{
+    border-bottom: green dashed;
+    border-width: thin;
+    padding-bottom: 10px;
+}
+
+.newsFooter{
+    padding-top: 5px;
+    font-size: small;
+    color: green;
+    float: right;
 }
